@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css'
-import Navbar from "./components/Navbar";
+import LandingPage from "./components/LandingPage";
+import GraphPage from "./components/GraphPage";
 
 function App() {
   return (
-      <div><Navbar /></div>
-      // "Hey"
+      <Router>
+          <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/graph" element={<GraphPage />} />
+          </Routes>
+      </Router>
   )
 }
 
