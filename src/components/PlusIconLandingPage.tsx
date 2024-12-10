@@ -1,21 +1,52 @@
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './plus-icon-landing-page.css';
+import EquationWritingBox from "./EquationWritingBox";
 
 function PlusIconLandingPage() {
+    const size = 60
     const style = {
-        fontSize: '100px',
-        color: '#d4d2d2',
-        fontWeight: '20',
+        fontSize: '60px', // Adjust this value as needed to center the plus sign
+        color: '#b8b5b5',
         border: 'none',
-        backgroundColor: 'white',
+        padding: '0 0 8px 2px',
+        backgroundColor: '#ececec',
+        borderRadius: '50%',
+        width: `${size}px`,
+        height: `${size}px`,
+        display: 'flex', // Add display flex to center the plus sign
+        justifyContent: 'center', // Center horizontally
+        alignItems: 'center', // Center vertically
     }
 
-    const navigate = useNavigate();
+    const [showDialog, setShowDialog] = useState(false);
+
     const handleClick = () => {
-        navigate('/graph');
+        setShowDialog(true);
+    };
+
+    const handleCloseDialog = () => {
+        setShowDialog(false);
     };
 
     return (
-        <button style={style} onClick={handleClick}>+</button>
+        <div>
+            <button
+                style={style}
+                className="button-pop"
+                onClick={handleClick}
+            >
+                +
+            </button>
+
+            {/* Use DialogBox Component */}
+            {showDialog && (
+                <EquationWritingBox
+                    message="This is a reusable dialog box!"
+                    onClose={handleCloseDialog}
+                />
+            )}
+        </div>
     )
 }
 

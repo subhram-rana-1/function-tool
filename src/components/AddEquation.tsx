@@ -1,10 +1,10 @@
 function AddEquation() {
     const style = {
-        fontSize: '12px',
-        color: '#d4d2d2',
+        fontSize: '22px',
+        color: '#b8b5b5',
         fontFamily: 'system-ui',
         fontStyle: 'normal',
-        fontWeight: '300',
+        fontWeight: '200',
     }
 
     return (

@@ -1,0 +1,30 @@
+/* Button Normal State */
+.button-pop {
+    font-size: 40px;
+    color: #d4d2d2;
+    font-weight: 20;
+    border: none;
+    background-color: white;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.1s ease; /* Ensure transition is for background color */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/* Hover effect */
+.button-pop:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #e0e0e0;
+    color: #000;
+}
+
+/* Active (clicked) effect */
+.button-pop:active {
+    transform: scale(1.2); /* Scale when clicked */
+    background-color: #ea2222; /* Change to red on click */
+    color: white; /* Text color change to white */
+    transition: background-color 0.1s ease, transform 0.1s ease; /* Animate background-color and scaling */
+}
